@@ -1,0 +1,5 @@
+target/
+_site/
+input.txt
+.idea/
+.DS_Store

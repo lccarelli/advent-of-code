@@ -1,0 +1,57 @@
+<title>Not Quite Lisp</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<main>
+  <header>
+    <a class="site" href="../../">Laura Carelli · AoC</a>
+    <span class="year">2015 · Rust → WebAssembly · <a href="https://adventofcode.com/2015/day/1" target="_blank" rel="noopener">enunciado original</a></span>
+  </header>
+
+  <article>
+    <h2>--- Día 1: Not Quite Lisp ---</h2>
+    <p>Santa está en la planta baja de un edificio que no tiene techo ni fondo, y sigue una lista de instrucciones: <code>(</code> sube un piso y <code>)</code> baja uno. Arranca en el piso <code>0</code>.</p>
+    <p>¿En qué piso termina?</p>
+    <canvas id="building" aria-label="Edificio con el ascensor y el recorrido piso por piso"></canvas>
+    <div class="controls">
+      <div class="group">
+        <button type="button" class="link" id="restart" aria-label="Volver al inicio">⏮</button>
+        <button type="button" class="link" id="back" aria-label="Instrucción anterior">◀</button>
+        <button type="button" class="link" id="play">Reproducir</button>
+        <button type="button" class="link" id="forward" aria-label="Instrucción siguiente">▶</button>
+        <button type="button" class="link" id="end" aria-label="Ir al final">⏭</button>
+      </div>
+      <div class="group" id="speeds">
+        <span class="label">pisos/s</span>
+        <button type="button" class="link" data-speed="2">2</button>
+        <button type="button" class="link" data-speed="15">15</button>
+        <button type="button" class="link" data-speed="80">80</button>
+        <button type="button" class="link" data-speed="400">400</button>
+        <button type="button" class="link" data-speed="2000">2000</button>
+      </div>
+    </div>
+    <p class="narration" id="narration" aria-live="polite"></p>
+    <p>Respuesta: <code class="answer" id="final-floor">–</code></p>
+  </article>
+
+  <article>
+    <h2>--- Parte 2 ---</h2>
+    <p>Ahora buscá la primera instrucción que hace entrar a Santa al sótano (piso <code>-1</code>). La primera instrucción es la <code>1</code>, la segunda es la <code>2</code>, y así.</p>
+    <p>En el edificio es la marca roja.</p>
+    <p>Respuesta: <code class="answer basement" id="basement-position">–</code></p>
+  </article>
+
+  <article>
+    <h2>--- Input ---</h2>
+    <textarea id="input" spellcheck="false" aria-label="Instrucciones"></textarea>
+    <div class="controls">
+      <button type="button" class="link" id="run">Recorrer</button>
+      <label class="link" for="input-file">Cargar archivo<input id="input-file" type="file" accept=".txt,text/plain"></label>
+      <button type="button" class="link" id="sample">Ejemplo generado</button>
+    </div>
+    <p class="note" id="source-note"></p>
+  </article>
+</main>
+
+<script type="module" src="app.js"></script>
