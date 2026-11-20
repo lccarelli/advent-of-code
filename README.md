@@ -9,6 +9,7 @@ Soluciones en Rust, cortas y con tests, compiladas a WebAssembly para verlas fun
 | Día | Puzzle | Solución | Visualización |
 | --- | --- | --- | --- |
 | 1 | [Not Quite Lisp](https://adventofcode.com/2015/day/1) | [`2015/day-01`](2015/day-01/src/lib.rs) | [El ascensor de Santa](https://lccarelli.github.io/advent-of-code/2015/day-01/) |
+| 2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | [`2015/day-02`](2015/day-02/src/lib.rs) | [Papel y cinta](https://lccarelli.github.io/advent-of-code/2015/day-02/) |
 
 ## Cada día
 

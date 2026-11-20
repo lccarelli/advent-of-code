@@ -1,0 +1,58 @@
+<title>I Was Told There Would Be No Math</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<main>
+  <header>
+    <a class="site" href="../../">Laura Carelli · AoC</a>
+    <span class="year">2015 · Rust → WebAssembly · <a href="https://adventofcode.com/2015/day/2" target="_blank" rel="noopener">enunciado original</a></span>
+  </header>
+
+  <article>
+    <h2>--- Día 2: I Was Told There Would Be No Math ---</h2>
+    <p>Los duendes tienen que envolver una lista de regalos. Cada regalo es una caja de <code>largo×ancho×alto</code>, una por línea: <code>2x3x4</code>.</p>
+    <p>Para cada caja cortan papel para las seis caras (<code>2·l·w + 2·w·h + 2·h·l</code>) y suman un extra igual a la cara más chica.</p>
+    <p>¿Cuántos pies cuadrados de papel necesitan en total?</p>
+    <canvas id="scene" aria-label="El regalo actual en 3D, sus piezas de papel y la fila de regalos"></canvas>
+    <div class="controls">
+      <div class="group">
+        <button type="button" class="link" id="restart" aria-label="Volver al primer regalo">⏮</button>
+        <button type="button" class="link" id="back" aria-label="Regalo anterior">◀</button>
+        <button type="button" class="link" id="play">Reproducir</button>
+        <button type="button" class="link" id="forward" aria-label="Regalo siguiente">▶</button>
+        <button type="button" class="link" id="end" aria-label="Ir al último regalo">⏭</button>
+      </div>
+      <div class="group">
+        <span class="label">regalos/s</span>
+        <button type="button" class="link" data-speed="0.5">½</button>
+        <button type="button" class="link" data-speed="2">2</button>
+        <button type="button" class="link" data-speed="10">10</button>
+        <button type="button" class="link" data-speed="60">60</button>
+        <button type="button" class="link" data-speed="300">300</button>
+      </div>
+    </div>
+    <p class="narration" id="narration" aria-live="polite"></p>
+    <p>Respuesta: <code class="answer" id="total-paper">–</code></p>
+  </article>
+
+  <article>
+    <h2>--- Parte 2 ---</h2>
+    <p>También necesitan cinta. Para cada caja, la cinta rodea el perímetro más chico y se le suma un moño que mide lo mismo que el volumen de la caja.</p>
+    <p>En el regalo es la cinta roja con el moño. ¿Cuántos pies de cinta necesitan en total?</p>
+    <p>Respuesta: <code class="answer basement" id="total-ribbon">–</code></p>
+  </article>
+
+  <article>
+    <h2>--- Input ---</h2>
+    <textarea id="input" spellcheck="false" aria-label="Lista de regalos"></textarea>
+    <div class="controls">
+      <button type="button" class="link" id="run">Envolver</button>
+      <label class="link" for="input-file">Cargar archivo<input id="input-file" type="file" accept=".txt,text/plain"></label>
+      <button type="button" class="link" id="sample">Ejemplo generado</button>
+    </div>
+    <p class="note" id="source-note"></p>
+  </article>
+</main>
+
+<script type="module" src="app.js"></script>
